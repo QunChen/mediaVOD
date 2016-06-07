@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>New Tab</title>
+		<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../node_modules/slick-carousel/slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="../node_modules/slick-carousel/slick/slick-theme.css"/>
+	</head>
+	<body >
+		<div id="header">
+
+			<div class="row">
+				<div class="col-md-3">
+					<h3>Home</h3>
+				</div>
+				<div class=" col-md-offset-6 col-md-3">
+					<a>History</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="main" ng-app="app">
+
+			
+			<div ng-controller="MovieController as movieCtrl">
+	
+				<slick infinite=false slides-to-show=9 slides-to-scroll=9 init-onload="true" >
+					<div ng-repeat="i in [0,1,2,3,4,5,6,7]">
+						<div>
+							<img src={{allMovies[i].images[0].url}} />
+							{{allMovies[i].title}}
+						</div>
+					</div>
+				</slick>
+			</div>
+
+		</div>
+		<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="../node_modules/angular/angular.min.js"></script>
+		<script type="text/javascript" src="../node_modules/slick-carousel/slick/slick.min.js"></script>
+		<script type="text/javascript" src="../node_modules/angular-slick-carousel/dist/angular-slick.min.js"></script>
+		<script type="text/javascript"  src="app.js"></script>
+	</body>
+</html>
